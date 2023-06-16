@@ -3,10 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-
-
     * {
         padding: 0;
         margin: 0;
@@ -18,14 +15,11 @@
     }
 
     .title {
-
-        font-family: MV Boli;
-        font-style: normal;
+        font-family: cursive;
         font-weight: 700;
-        font-size: 60px;
+        font-size: 40px;
         line-height: 75px;
         color: #FFFFFF;
-
     }
 
     .search {
@@ -36,14 +30,12 @@
         height: 2.5em;
         width: 17em;
         padding: 0.5em 1.7em;
-
     }
 
     .search :hover,
     .search:focus {
         border: none;
         outline: none;
-
     }
 
     /* .searchButton {
@@ -51,7 +43,6 @@
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
     } */
-
     .all {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -60,28 +51,41 @@
     }
 
     .other {
-        background: #000320
+        /* background: #001d20 */
+        background: #3d95be;
     }
 
     .cover {
         background-size: cover;
         background-repeat: no-repeat;
     }
-
+    .movie {
+        background: #2B3040;
+    }
 }
 
-
-
 @media screen and (max-width: 768px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .search {
+        height: 2em;
+        width: 14em;
+        padding: 0.5em 1.7em;
+    }
+
     .all {
         display: flex;
         flex-direction: column;
-
     }
-
 }
 
 @media screen and (max-width: 400px) {
+    .title {
+        font-size: 16px;
+    }
+
     .movie {
         display: grid;
         grid-template-columns: 1fr;
@@ -105,5 +109,4 @@
         justify-content: flex-start;
         align-items: flex-start;
     }
-
 }
