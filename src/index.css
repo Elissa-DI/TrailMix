@@ -13,7 +13,6 @@
     .header {
         background: #140051
     }
-
     .title {
         font-family: cursive;
         font-weight: 700;
@@ -50,18 +49,19 @@
         padding: 2em;
     }
 
-    .other {
-        /* background: #001d20 */
-        background: #3d95be;
-    }
-
     .cover {
         background-size: cover;
         background-repeat: no-repeat;
     }
+
     .movie {
-        background: #2B3040;
+        background: #010e38;
     }
+
+    .group:hover .hidden {
+        display: block;
+    }
+
 }
 
 @media screen and (max-width: 768px) {

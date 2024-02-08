@@ -128,11 +128,13 @@ function App() {
     }
   }
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className={`grid grid-row-3 h-full `} >
       <header className='header grid grid-cols-2 gap-10 py-1 px-10'>
         <div className='flex gap-2'>
-          <img src="/img/logo.png" alt="Logo" className='w-10 h-12 mt-3'/>
+          <img src="/img/logo.png" alt="Logo" className='w-10 h-12 mt-3' />
           <h1 className="title hidden md:block">TrailMix</h1>
         </div>
         <form onSubmit={searchMovie} className="flex justify-end items-center">
@@ -140,8 +142,8 @@ function App() {
           {/* <button type="submit" className=" searchButton" onClick={handleRef}><AiOutlineSearch size={25} className=''/></button> */}
         </form>
       </header>
-      <section className={`h-[80vh] `}>
-        <div style={{ background: `url(${imageUrl}${selectedMovie.backdrop_path}) ` }} className='h-full cover'>
+      <section className={`h-[80vh]`}>
+        <div style={{ background: `url(${imageUrl}${selectedMovie.backdrop_path}) ` }} className='h-full bg-cover bg-no-repeat'>
           <div className='all'>
             {selectedMovie.videos && playTrailer ? (
               <>
@@ -176,16 +178,24 @@ function App() {
         </div>
       </section>
       <main>
-        <div className='grid grid-cols-3  gap-3 movie' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <div className='py-5 px-10 movie'>
+          <p className='font-bold text-white text-xl'>Recent Movies</p>
+        </div>
+        <div className='grid grid-cols-3  gap-3 movie'>
           {
             movies ? MemoMovies() :
               <div className='shadow-md'></div>
           }
         </div>
       </main>
-      <footer className='bg-black'>
+      <footer className=' bg-slate-700'>
         {notFound && <p className='title'>no movie found with that name</p>}
-        <p className='items-center flex justify-center'><FaCopyright color='#fff' size={30} /><span className='text-white'>Elissa</span></p>
+        <p className='items-center flex justify-center text-white'>
+          &copy; {currentYear} Created by &nbsp;
+          <a href="https://www.linkedin.com/in/elissa-dusabe-415161256/" className=' text-blue-400' title='My Linkedin'>
+            Elissa
+          </a>
+        </p>
       </footer>
     </div>
   )
